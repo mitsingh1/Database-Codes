@@ -9,7 +9,7 @@ chromosome1
 ```
 
 # Capturing Genes and Variants related to retinoblastoma from public database
-```{r}
+```{r error=TRUE}
 install.packages("VarfromPDB")
 
 # Print first five retinobalstoma variants from clinvar
@@ -24,6 +24,16 @@ head(print(dim(variants.clinvar))
 # Extract the genes and variants associated to retinoblastoma from uniprot
 uniprot.phenotype = extract_uniprot(keyword="retinoblastoma")
 head(uniprot.phenotype)
+
+#Extract the genes and variants related to cataract in Chinese populations from PubMed
+
+cataract_pubmed <- extract_pubmed( query = "cataract AND gene AND mutation AND chinese NOT meta analysis", keyword="cataract", localPDB="/public/home/czf/project/rare.disease/localPDB")
+
+head(cataract_pubmed)
+
+#Extract the phenotypes and genes from HPO
+HPO.phenotype = pheno_extract_HPO("retinoblastoma")
+Head(HPO.phenotype = pheno_extract_HPO("retinoblastoma")
 ```
 
 
