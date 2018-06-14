@@ -1,0 +1,29 @@
+# Dowloading data from public databases
+
+```{r error=TRUE}
+#Retrieve list of genes on ALL Chromosomes from ENSEMBL
+
+library(biomaRt)
+chromosome1 <- getBM(attributes =c("hgnc_symbol", "ensembl_gene_id"), filters="chromosome name", values="1", mart=ensembl_mart)
+chromosome1
+```
+
+# Capturing Genes and Variants related to retinoblastoma from public database
+```{r}
+install.packages("VarfromPDB")
+
+# Print first five retinobalstoma variants from clinvar
+library(VarfromPDB)
+clinvar.phenotype = extract_clinvar(keyword="retinoblastoma") 
+genes.clinvar = clinvar.phenotype[[1]] 
+print(dim(genes.clinvar))
+variants.clinvar = clinvar.phenotype[[2]] 
+print(dim(variants.clinvar))
+head(print(dim(variants.clinvar))
+     
+# Extract the genes and variants associated to retinoblastoma from uniprot
+uniprot.phenotype = extract_uniprot(keyword="retinoblastoma")
+head(uniprot.phenotype)
+```
+
+
