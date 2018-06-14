@@ -11,7 +11,7 @@ CREATE DATABASE Mysql_Clingen;
 
 USE Mysql_Clingen;
 
-#Make a table and define variables
+# Make a table and define variables
 
 mysql> CREATE TABLE px1_Clingen
     -> (px VARCHAR(30),
