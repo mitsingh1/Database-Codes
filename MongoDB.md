@@ -19,7 +19,7 @@ db.px_1.count( { "gender" : "FEMALE", "race" : "WHITE", "vital_status" : "Alive"
 
 db.px_1.count({"days_to_last_followup" : {$gte : 900}})
 
-# $in function
+# $in function: any patient who was diagnosed with T1,T1a,T1b or T1c tumor:
 
 db.px_1.count({"pathologic_T" : {"$in" : ["T1", "T1a", "T1b", "T1c"]}})
 
